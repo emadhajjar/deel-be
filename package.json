@@ -19,5 +19,9 @@
   "engines": {
     "node": ">=10.16.3"
   },
-  "engineStrict": true
+  "engineStrict": true,
+  "volta": {
+    "node": "22.9.0",
+    "yarn": "1.22.22"
+  }
 }
