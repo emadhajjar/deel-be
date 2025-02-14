@@ -32,9 +32,9 @@ Contractors get paid for jobs performed under a certain contract by clients.
 The exercise requires [Node.js](https://nodejs.org/en/) to be installed. We recommend using the LTS version.
 
 1. Start by creating a local repository for this folder.
-2. In the repo's root directory, run `npm install` to install all dependencies.
-3. Next, run `npm run seed` to seed the local SQLite database. **Warning: This will drop the database if it exists**. The database will be stored in a local file named `database.sqlite3`.
-4. Then run `npm start` to start both the server and the React client.
+2. In the repo's root directory, run `yarn install` to install all dependencies.
+3. Next, run `yarn run seed` to seed the local SQLite database. **Warning: This will drop the database if it exists**. The database will be stored in a local file named `database.sqlite3`.
+4. Then run `yarn start` to start both the server and the React client.
 
 ❗️ **Make sure to commit all changes to the master branch!**
 
