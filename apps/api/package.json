@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./src/server.js",
+    "start": "nodemon ./src/server.ts",
     "seed": "node ./scripts/seedDb.js"
   },
   "dependencies": {
@@ -13,6 +13,7 @@
     "sqlite3": "^5.0.0"
   },
   "devDependencies": {
+    "@types/express": "^5.0.0",
     "nodemon": "^3.1.9"
   },
   "volta": {

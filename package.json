@@ -5,11 +5,12 @@
   "type": "module",
   "repository": "git@github.com:emadhajjar/deel-be.git",
   "author": "Emad Hajjar <emadaldeen.hajjar@gmail.com>",
-  "dependencies": {},
   "scripts": {
-    "api": "yarn workspace @deel-be/api"
+    "api": "yarn workspace @deel-be/api",
+    "ts": "yarn workspace @deel-be/ts"
   },
   "devDependencies": {
+    "@deel-be/ts": "*",
     "concurrently": "^9.1.2"
   },
   "engines": {
@@ -17,7 +18,8 @@
   },
   "engineStrict": true,
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "packages/*"
   ],
   "volta": {
     "node": "22.9.0",
