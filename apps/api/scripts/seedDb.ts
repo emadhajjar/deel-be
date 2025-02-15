@@ -1,6 +1,7 @@
-const { Contract, Job, Profile } = require('../src/model');
+import { Contract, Job, Profile } from '../src/model';
 
 /* WARNING THIS WILL DROP THE CURRENT DATABASE */
+
 seed();
 
 async function seed() {
@@ -8,6 +9,7 @@ async function seed() {
   await Profile.sync({ force: true });
   await Contract.sync({ force: true });
   await Job.sync({ force: true });
+
   //insert data
   await Promise.all([
     Profile.create({

@@ -1,0 +1,5 @@
+{
+  "exec": "NODE_OPTIONS='--import=./register.js' node ./src/server",
+  "ext": "ts",
+  "watch": ["src"]
+}

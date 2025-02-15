@@ -7,6 +7,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^22.10.2",
+    "specifier-resolution-node": "^1.1.4",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "ts-patch": "^3.3.0",

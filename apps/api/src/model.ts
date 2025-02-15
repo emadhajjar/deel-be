@@ -1,30 +1,30 @@
-const Sequelize = require('sequelize');
+import { DataTypes, Model, Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize({
+export const sequelize = new Sequelize({
   dialect: 'sqlite',
   storage: './database.sqlite3',
 });
 
-class Profile extends Sequelize.Model {}
+export class Profile extends Model {}
 Profile.init(
   {
     balance: {
-      type: Sequelize.DECIMAL(12, 2),
+      type: DataTypes.DECIMAL(12, 2),
     },
     firstName: {
       allowNull: false,
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     lastName: {
       allowNull: false,
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     profession: {
       allowNull: false,
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     type: {
-      type: Sequelize.ENUM('client', 'contractor'),
+      type: DataTypes.ENUM('client', 'contractor'),
     },
   },
   {
@@ -33,15 +33,15 @@ Profile.init(
   },
 );
 
-class Contract extends Sequelize.Model {}
+export class Contract extends Model {}
 Contract.init(
   {
     status: {
-      type: Sequelize.ENUM('new', 'in_progress', 'terminated'),
+      type: DataTypes.ENUM('new', 'in_progress', 'terminated'),
     },
     terms: {
       allowNull: false,
-      type: Sequelize.TEXT,
+      type: DataTypes.TEXT,
     },
   },
   {
@@ -50,23 +50,23 @@ Contract.init(
   },
 );
 
-class Job extends Sequelize.Model {}
+export class Job extends Model {}
 Job.init(
   {
     description: {
       allowNull: false,
-      type: Sequelize.TEXT,
+      type: DataTypes.TEXT,
     },
     paid: {
-      default: false,
-      type: Sequelize.BOOLEAN,
+      defaultValue: false,
+      type: DataTypes.BOOLEAN,
     },
     paymentDate: {
-      type: Sequelize.DATE,
+      type: DataTypes.DATE,
     },
     price: {
       allowNull: false,
-      type: Sequelize.DECIMAL(12, 2),
+      type: DataTypes.DECIMAL(12, 2),
     },
   },
   {
@@ -81,10 +81,3 @@ Profile.hasMany(Contract, { as: 'Client', foreignKey: 'ClientId' });
 Contract.belongsTo(Profile, { as: 'Client' });
 Contract.hasMany(Job);
 Job.belongsTo(Contract);
-
-module.exports = {
-  Contract,
-  Job,
-  Profile,
-  sequelize,
-};
