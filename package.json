@@ -6,12 +6,18 @@
   "repository": "git@github.com:emadhajjar/deel-be.git",
   "author": "Emad Hajjar <emadaldeen.hajjar@gmail.com>",
   "scripts": {
+    "format:lint": "eslint --fix",
+    "format:prettier": "prettier './**/*' --write --ignore-unknown",
+    "format": "concurrently -m 1 'yarn:format:*'",
     "api": "yarn workspace @deel-be/api",
+    "lint": "yarn workspace @deel-be/lint",
     "ts": "yarn workspace @deel-be/ts"
   },
   "devDependencies": {
+    "@deel-be/lint": "*",
     "@deel-be/ts": "*",
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "rimraf": "^6.0.1"
   },
   "engines": {
     "node": ">=10.16.3"
