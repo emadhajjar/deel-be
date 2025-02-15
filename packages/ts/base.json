@@ -21,9 +21,7 @@
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": false,
     "noImplicitReturns": true,
-    "plugins": [
-      { "transform": "typescript-transform-paths" }
-    ],
+    "plugins": [{ "transform": "typescript-transform-paths" }],
     "preserveConstEnums": true,
     "preserveSymlinks": true,
     "pretty": true,

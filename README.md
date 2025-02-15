@@ -65,21 +65,21 @@ Below is a list of the required APIs for the application.
 
 ```json
 [
-    {
-        "id": 1,
-        "fullName": "Reece Moyer",
-        "paid" : 100.3
-    },
-    {
-        "id": 200,
-        "fullName": "Debora Martin",
-        "paid" : 99
-    },
-    {
-        "id": 22,
-        "fullName": "Debora Martin",
-        "paid" : 21
-    }
+  {
+    "fullName": "Reece Moyer",
+    "id": 1,
+    "paid": 100.3
+  },
+  {
+    "fullName": "Debora Martin",
+    "id": 200,
+    "paid": 99
+  },
+  {
+    "fullName": "Debora Martin",
+    "id": 22,
+    "paid": 21
+  }
 ]
 ```
 
