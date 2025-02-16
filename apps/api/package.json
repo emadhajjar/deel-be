@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "nodemon",
-    "seed": "NODE_OPTIONS='--import=./register.js' node ./scripts/seedDb"
+    "seed": "NODE_OPTIONS='--import=./register.js' node ./scripts/seedDatabase"
   },
   "dependencies": {
     "express": "^4.21.2",
