@@ -11,12 +11,20 @@
     "format": "concurrently -m 1 'yarn:format:*'",
     "api": "yarn workspace @deel-be/api",
     "lint": "yarn workspace @deel-be/lint",
-    "ts": "yarn workspace @deel-be/ts"
+    "ts": "yarn workspace @deel-be/ts",
+    "start:api": "yarn api start",
+    "start": "concurrently 'yarn:start:*'",
+    "prod": "dotenv -e config/prod.env yarn",
+    "stg": "dotenv -e config/stg.env yarn"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
   },
   "devDependencies": {
     "@deel-be/lint": "*",
     "@deel-be/ts": "*",
     "concurrently": "^9.1.2",
+    "dotenv-cli": "^8.0.0",
     "rimraf": "^6.0.1"
   },
   "engines": {
