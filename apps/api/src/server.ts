@@ -1,6 +1,6 @@
 import { app } from './app';
 
-init();
+await init();
 
 async function init() {
   try {
@@ -8,7 +8,6 @@ async function init() {
       console.log('Express App Listening on Port 3001');
     });
   } catch (error) {
-    console.error(`An error occurred: ${JSON.stringify(error)}`);
-    process.exit(1);
+    throw new Error(`An error occurred: ${JSON.stringify(error)}`);
   }
 }
