@@ -8,6 +8,7 @@
     "seed": "NODE_OPTIONS='--import=./register.js' node ./scripts/seed-database"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.21.2",
     "http-status-codes": "^2.3.0",
     "sequelize": "^6.23.0",
@@ -15,6 +16,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "nodemon": "^3.1.9"
   },

@@ -7,5 +7,6 @@ config({ path: environmentFilePath });
 const url = new URL(process.env.API_URL ?? '');
 
 export const Config = {
+  hostname: url.hostname,
   port: url.port,
 };
