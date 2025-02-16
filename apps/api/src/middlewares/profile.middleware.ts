@@ -1,9 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 
-interface ResponseLocals {
-  profile: any;
-}
+import { ResponseLocals } from '../interfaces/express.interface';
 
 export async function validateProfile<ResponseBody = any>(
   request: Request,
