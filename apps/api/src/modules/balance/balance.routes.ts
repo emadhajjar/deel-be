@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { validateProfile } from '../../middleware/profile.middleware';
+import { validateProfile } from '../../middlewares/profile.middleware';
 import { BalanceController } from './balance.controller';
 
 export const balanceRouter = Router();

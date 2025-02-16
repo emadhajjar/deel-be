@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { validateProfile } from '../../middleware/profile.middleware';
+import { validateProfile } from '../../middlewares/profile.middleware';
 import { JobController } from './job.controller';
 
 export const jobRouter = Router();

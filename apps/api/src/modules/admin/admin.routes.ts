@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { validateData } from '../../middleware/validation.middleware';
+import { validateData } from '../../middlewares/validation.middleware';
 import { AdminController } from './admin.controller';
 import { getProfessionSchema } from './admin.schema';
 
