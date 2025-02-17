@@ -111,6 +111,7 @@ Contract.init(
 );
 
 export class Job extends Model<InferAttributes<Job>, InferCreationAttributes<Job>> {
+  declare Contract?: NonAttribute<Contract>;
   declare ContractId: ForeignKey<Contract['id']>;
   declare createdAt: CreationOptional<Date>;
   declare description: string;
