@@ -1,4 +1,4 @@
-import dayjs from "dayjs";
+import dayjs from 'dayjs';
 import { Op } from 'sequelize';
 
 import { Contract, ContractStatus, Job, Profile } from '../../model';
