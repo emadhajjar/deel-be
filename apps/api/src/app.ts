@@ -1,8 +1,7 @@
 import cors, { CorsOptions } from 'cors';
-import express, {json, urlencoded} from 'express';
+import express, { json, urlencoded } from 'express';
 
 import { Config } from './config';
-import { sequelize } from './model';
 import { routes } from './routes';
 
 export const app = express();
@@ -22,6 +21,3 @@ app.use(json());
 app.use(urlencoded({ extended: true }));
 
 app.use('/', routes);
-
-app.set('sequelize', sequelize);
-app.set('models', sequelize.models);
