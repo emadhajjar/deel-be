@@ -1,3 +1,112 @@
+# Deel
+
+This is the repository for the `Dell Back-end Engineer Code Test`.
+
+## Table of contents
+
+- [Deel](#deel)
+  - [Table of contents](#table-of-contents)
+  - [Documentation](#documentation)
+  - [Getting Stated](#getting-stated)
+    - [Installation](#installation)
+    - [Start up the Dev Server](#start-up-the-dev-server)
+  - [Tools](#tools)
+    - [Git hooks](#git-hooks)
+    - [Homebrew](#homebrew)
+    - [Volta.js](#voltajs)
+  - [Merge Requests](#merge-requests)
+  - [Tips](#tips)
+    - [Create a branch from the latest `dev`](#create-a-branch-from-the-latest-main)
+      - [Rebasing your brach onto latest `dev`](#rebasing-your-brach-onto-latest-main)
+  - [Environments](#environments)
+  - [Helpful Resources](#helpful-resources)
+
+## Documentation
+
+This README file includes basic information to help you get started on the project.
+
+There are lots of things that still need to be documented. If you have any
+suggestions, feel free to submit a Merge Request or discuss with the team!
+Improvements are always welcome.
+
+## Getting Stated
+
+### Installation
+
+1. It's recommended to have [Homebrew](#homebrew) and [Volta](#voltajs) installed.
+2. Run `yarn` to download and link all dependencies.
+3. Run `yarn api seed` to setup the datebase.
+
+### Start up the Dev Server
+
+1. Run `yarn start` to build all packages and start the development server.
+2. Go to `http://localhost:3001`
+
+## Tools
+
+### Git hooks
+
+We have a few hooks setup with Husky:
+
+- `pre-commit`: Runs Prettier and ESLint using `lint-staged` before finishing a
+  commit. If Eslint throws and error, the commit is aborted.
+
+### Homebrew
+
+Homebrew installs the stuff you need that Apple (or your Linux system) didn’t.
+
+To install Homebrew run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+### Volta.js
+
+Volta.js makes it easier to manage Node tooling versions. If you have Volta.js
+installed you'll automatically use the correct Node and Yarn versions for this
+Project in your terminal, just by being in the project folder.
+
+This is defined by the `volta` field in the root `package.json`
+
+To install Volta, run `curl https://get.volta.sh | bash` or you can check out the
+official [getting started documentation](https://docs.volta.sh/guide/getting-started)
+
+## Merge Requests
+
+Merge Requests are a great way to share knowledge about the codebase between the
+team and to increase the code quality. But in order to be helpful. they need to
+follow a few principles:
+
+Some principles are:
+
+1. Write your Merge Requests (MR) as if they are going to ready by other people.
+2. Always write a descriptive and meaningful MR description.
+3. Keep your MR as short and scoped as possible.
+
+## Tips
+
+### Create a branch from the latest `dev`
+
+Just run `git checkout -b new-branch-name origin/dev`. if you use Zsh with the
+git plugin installed, you can replace `git checkout -b` with `gcb`.
+
+Example: `git checkout -b feat/some-feature origin/dev`.
+
+#### Rebasing your brach onto latest `dev`
+
+You can run `git pull --rebase origin/dev`. That way the latest `dev` will be
+fetched.
+
+Another options is to update the `dev` branch to it's latest version and then
+run `git rebase dev`
+
+## Environments
+
+| Environment | URL          |
+| ----------- | ------------ |
+| `staging`   | `http://...` |
+
+## Helpful Resources
+
+- [Express](https://expressjs.com/)
+
 # DEEL BACKEND TASK
 
 💫 Welcome! 🎉
