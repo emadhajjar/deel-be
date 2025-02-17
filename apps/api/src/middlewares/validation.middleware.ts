@@ -2,10 +2,10 @@ import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import { z, ZodError } from 'zod';
 
-export function validateData(schema: z.ZodObject<any, any>, query = false) {
+export function validateData(schema: z.ZodTypeAny, query = false) {
   return (request: Request, response: Response, next: NextFunction) => {
     try {
-      schema.parse(query ? request.query : request.body);
+      request[query ? 'query' : 'body'] = schema.parse(query ? request.query : request.body);
       next();
     } catch (error) {
       if (error instanceof ZodError) {

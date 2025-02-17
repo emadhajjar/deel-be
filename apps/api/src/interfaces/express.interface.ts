@@ -1,4 +1,5 @@
+import { Profile } from '../model';
+
 export interface ResponseLocals {
-  // TODO: update profile type
-  profile: any;
+  profile: Profile;
 }

@@ -1,22 +1,27 @@
 import { Request, Response } from 'express';
+import { z } from 'zod';
 
 import { prepareResponse } from '../../utils/response';
+import { AdminSchema } from './admin.schema';
 import { AdminService } from './admin.service';
 
-export const AdminController = {
-  async getProfession(request: Request, response: Response) {
-    await prepareResponse(() => {
-      const { end, start } = request.query as { end: string; start: string };
-      const startDate = new Date(start);
-      const endDate = new Date(end);
+type GetBestProfessionQuery = z.infer<typeof AdminSchema.getBestProfession>;
+type ListBestClientsQuery = z.infer<typeof AdminSchema.listBestClients>;
 
-      return AdminService.getProfession(startDate, endDate);
+export const AdminController = {
+  async getBestProfession(request: Request, response: Response) {
+    await prepareResponse(() => {
+      const { end, start } = request.query as unknown as GetBestProfessionQuery;
+
+      return AdminService.getBestProfession(start, end);
     }, response);
   },
 
   async listClients(request: Request, response: Response) {
     await prepareResponse(() => {
-      return AdminService.listClients();
+      const { end, limit, start } = request.query as unknown as ListBestClientsQuery;
+
+      return AdminService.listBestClients(start, end, limit);
     }, response);
   },
 };

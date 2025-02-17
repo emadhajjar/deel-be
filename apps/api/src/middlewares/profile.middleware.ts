@@ -2,26 +2,35 @@ import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 
 import { ResponseLocals } from '../interfaces/express.interface';
+import { Profile, ProfileType } from '../model';
 
-export async function validateProfile<ResponseBody = any>(
-  request: Request,
-  response: Response<ResponseBody, ResponseLocals>,
-  next: NextFunction,
-) {
-  const profileId = request.get('profile_id');
+export function validateProfile(profileType?: ProfileType, parameterName?: string) {
+  return async (request: Request, response: Response<any, ResponseLocals>, next: NextFunction) => {
+    const profileId =
+      parameterName == undefined ? request.get('profile_id') : request.params[parameterName];
 
-  if (profileId != undefined) {
-    const { Profile } = request.app.get('models');
+    if (profileId != undefined) {
+      const profile = await Profile.findOne({
+        where: { id: profileId },
+      });
 
-    const profile = await Profile.findOne({
-      where: { id: profileId },
-    });
+      if (profile != undefined) {
+        response.locals.profile = profile;
 
-    if (profile != undefined) {
-      response.locals.profile = profile;
-      return next();
+        if (profileType != undefined && profile.type !== profileType) {
+          response.status(StatusCodes.UNAUTHORIZED).json({
+            error: `Invalid profile type ${profileType}`,
+            success: false,
+          });
+        }
+
+        return next();
+      }
     }
-  }
 
-  response.status(StatusCodes.UNAUTHORIZED).end();
+    response.status(StatusCodes.UNAUTHORIZED).json({
+      error: `Invalid profile`,
+      success: false,
+    });
+  };
 }
